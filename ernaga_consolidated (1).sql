@@ -120,7 +120,7 @@ INSERT INTO `servicios` (`id_servicio`, `nombre`, `descripcion`, `precio`, `id_e
 (3, 'Consultoría de Seguridad Informática', 'Análisis de vulnerabilidades y recomendaciones para proteger su infraestructura.', 50000.00, 1);
 
 --
--- Índices para tablas volcadas
+--
 --
 
 --
@@ -181,7 +181,7 @@ ALTER TABLE `servicios`
   MODIFY `id_servicio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- Restricciones para tablas volcadas
+-- 
 --
 
 --
