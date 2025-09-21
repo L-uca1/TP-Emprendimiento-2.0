@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `ernaga_consolidated`
+-- Base de datos: "ernaga_consolidated"
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `categorias`
+-- Estructura de tabla para la tabla "categorias"
 --
 
 CREATE TABLE `categorias` (
@@ -36,7 +36,7 @@ CREATE TABLE `categorias` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Volcado de datos para la tabla `categorias`
+-- Volcado de datos para la tabla "categorias"
 --
 
 INSERT INTO `categorias` (`id_categoria`, `nombre`, `descripcion`, `id_emprendimiento`, `parent_id`) VALUES
@@ -52,7 +52,7 @@ INSERT INTO `categorias` (`id_categoria`, `nombre`, `descripcion`, `id_emprendim
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `emprendimiento`
+-- Estructura de tabla para la tabla "emprendimiento"
 --
 
 CREATE TABLE `emprendimiento` (
@@ -65,7 +65,7 @@ CREATE TABLE `emprendimiento` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Volcado de datos para la tabla `emprendimiento`
+-- Volcado de datos para la tabla "emprendimiento"
 --
 
 INSERT INTO `emprendimiento` (`id_emprendimiento`, `nombre`, `descripcion`, `contacto`, `direccion`, `mision`) VALUES
@@ -74,7 +74,7 @@ INSERT INTO `emprendimiento` (`id_emprendimiento`, `nombre`, `descripcion`, `con
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `productos`
+-- Estructura de tabla para la tabla "productos"
 --
 
 CREATE TABLE `productos` (
@@ -88,7 +88,7 @@ CREATE TABLE `productos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Volcado de datos para la tabla `productos`
+-- Volcado de datos para la tabla "productos"
 --
 
 INSERT INTO `productos` (`id_producto`, `nombre`, `descripcion`, `precio`, `stock`, `id_categoria`, `id_emprendimiento`) VALUES
@@ -99,7 +99,7 @@ INSERT INTO `productos` (`id_producto`, `nombre`, `descripcion`, `precio`, `stoc
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `servicios`
+-- Estructura de tabla para la tabla "servicios"
 --
 
 CREATE TABLE `servicios` (
@@ -111,7 +111,7 @@ CREATE TABLE `servicios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Volcado de datos para la tabla `servicios`
+-- Volcado de datos para la tabla "servicios"
 --
 
 INSERT INTO `servicios` (`id_servicio`, `nombre`, `descripcion`, `precio`, `id_emprendimiento`) VALUES
@@ -124,7 +124,7 @@ INSERT INTO `servicios` (`id_servicio`, `nombre`, `descripcion`, `precio`, `id_e
 --
 
 --
--- Indices de la tabla `categorias`
+-- Indices de la tabla "categorias"
 --
 ALTER TABLE `categorias`
   ADD PRIMARY KEY (`id_categoria`),
@@ -132,13 +132,13 @@ ALTER TABLE `categorias`
   ADD KEY `parent_id` (`parent_id`);
 
 --
--- Indices de la tabla `emprendimiento`
+-- Indices de la tabla "emprendimiento"
 --
 ALTER TABLE `emprendimiento`
   ADD PRIMARY KEY (`id_emprendimiento`);
 
 --
--- Indices de la tabla `productos`
+-- Indices de la tabla "productos"
 --
 ALTER TABLE `productos`
   ADD PRIMARY KEY (`id_producto`),
@@ -146,7 +146,7 @@ ALTER TABLE `productos`
   ADD KEY `id_emprendimiento` (`id_emprendimiento`);
 
 --
--- Indices de la tabla `servicios`
+-- Indices de la tabla "servicios"
 --
 ALTER TABLE `servicios`
   ADD PRIMARY KEY (`id_servicio`),
@@ -157,25 +157,25 @@ ALTER TABLE `servicios`
 --
 
 --
--- AUTO_INCREMENT de la tabla `categorias`
+-- AUTO_INCREMENT de la tabla "categorias"
 --
 ALTER TABLE `categorias`
   MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT de la tabla `emprendimiento`
+-- AUTO_INCREMENT de la tabla "emprendimiento"
 --
 ALTER TABLE `emprendimiento`
   MODIFY `id_emprendimiento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT de la tabla `productos`
+-- AUTO_INCREMENT de la tabla "productos"
 --
 ALTER TABLE `productos`
   MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT de la tabla `servicios`
+-- AUTO_INCREMENT de la tabla "servicios"
 --
 ALTER TABLE `servicios`
   MODIFY `id_servicio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
@@ -185,21 +185,21 @@ ALTER TABLE `servicios`
 --
 
 --
--- Filtros para la tabla `categorias`
+-- Filtros para la tabla "categorias"
 --
 ALTER TABLE `categorias`
   ADD CONSTRAINT `categorias_ibfk_1` FOREIGN KEY (`id_emprendimiento`) REFERENCES `emprendimiento` (`id_emprendimiento`) ON DELETE CASCADE,
   ADD CONSTRAINT `categorias_ibfk_2` FOREIGN KEY (`parent_id`) REFERENCES `categorias` (`id_categoria`) ON DELETE CASCADE;
 
 --
--- Filtros para la tabla `productos`
+-- Filtros para la tabla "productos"
 --
 ALTER TABLE `productos`
   ADD CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`id_categoria`) REFERENCES `categorias` (`id_categoria`) ON DELETE SET NULL,
   ADD CONSTRAINT `productos_ibfk_2` FOREIGN KEY (`id_emprendimiento`) REFERENCES `emprendimiento` (`id_emprendimiento`) ON DELETE CASCADE;
 
 --
--- Filtros para la tabla `servicios`
+-- Filtros para la tabla "servicios"
 --
 ALTER TABLE `servicios`
   ADD CONSTRAINT `servicios_ibfk_1` FOREIGN KEY (`id_emprendimiento`) REFERENCES `emprendimiento` (`id_emprendimiento`) ON DELETE CASCADE;
