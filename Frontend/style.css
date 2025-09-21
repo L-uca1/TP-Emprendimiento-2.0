@@ -22,7 +22,7 @@ body {
 
 .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-/* --- TIPOGRAFÍA --- */
+/* --- TIPOGRAFIA --- */
 h1, h2, h3, h4 { font-family: var(--font-titulos); font-weight: 700; color: var(--color-azul-marino); }
 h1 { font-size: 3rem; }
 h2 { font-size: 2.2rem; text-align: center; margin-bottom: 2rem; border-bottom: 2px solid var(--color-dorado-elegante); display: inline-block; padding-bottom: 0.5rem; }
@@ -37,7 +37,7 @@ h3 { font-size: 1.5rem; }
 .logo-consolidated { font-size: 0.7em; font-family: var(--font-cuerpo); color: var(--color-gris-profesional); display: block; }
 .header-contact { text-align: right; }
 
-/* --- SECCIÓN HERO --- */
+/* --- SECCION HERO --- */
 #hero { background-color: var(--color-azul-marino); color: var(--color-texto-claro); padding: 5rem 0; text-align: center; }
 #hero h1 { color: var(--color-fondo-claro); }
 #hero p { font-size: 1.2rem; max-width: 700px; margin: 1rem auto 0; color: var(--color-gris-profesional); }
@@ -119,4 +119,5 @@ section:nth-child(even) { background-color: var(--color-fondo-seccion); }
     font-size: 1.1rem; 
     line-height: 1.8;
     color: #555; 
+
 }
